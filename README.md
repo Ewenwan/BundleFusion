@@ -20,8 +20,9 @@ More information about this project can be found in our [paper](https://arxiv.or
      pose 的改变需要映射到全局的 TSDF 模型中。方法是，挑选出 pose 改变量最大的 chunks（10 个），
      按照将帧融合到 TSDF 时的 pose，做 de-integration，将之前融合进 TSDF 模型中的数据，从 TSDF 模型中减掉。
      然后，按照优化之后的 pose，将 chunk 的数据 re-integrate 到 TSDF 模型中。
-
-
+ 
+     算法使用局部小块优化和全局优化解决位姿求解的 drift 和回环检测问题，
+     并且用 integration和de-integration的方式解决位姿优化后重建场景更新的问题。
 
 # 解析
 [BundleFusion 解析](https://blog.csdn.net/fuxingyin/article/details/52921958)
