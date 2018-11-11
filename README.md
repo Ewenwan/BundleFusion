@@ -1,6 +1,8 @@
 # BundleFusion
-
+     2017年斯坦福大学提出的BundleFusion算法，可以说是目前基于RGB-D相机进行稠密三维重建效果最好的方法了。
+ 
 ![BundleFusion](img/teaser.jpg)
+
 
 You are free to use this code with proper attribution in non-commercial applications (Please see [License.txt](License.txt)).
 
