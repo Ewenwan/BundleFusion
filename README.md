@@ -66,14 +66,18 @@ More information about this project can be found in our [paper](https://arxiv.or
                系统中，global pose 优化会改变所有帧的 pose，
                作者使用 de-integration 和 re-integration 根据 pose 的变化，
                更新 TSDF 值。TSDF 模型表示采用 voxel hashing 的形式，
-               RGB-D 数据的 integration 和 de-integration 是对称的，
+               RGB-D 数据的  加操作(integration ) 和 减操作(de-integration) 是对称的，
                integrate 的数据，可以按照 integrate 时的 pose，
                从模型中做 de-integration 减掉。
                
                作者对于优化的位姿按照位姿的变化的大小排序，
                将 pose 变化最大的 10 帧数据先按照优化前的 pose 做de-integration，
                从模型中减掉，然后再按照优化后的 pose 做 re-integration。
-
+              
+              动态3D重建
+                    这里的dynamic 3D reconstruction指的是根据优化的pose调整之前重建好的部分。
+                    这里对于TSDF模型的更新不仅有 加操作(integration )，还有 减操作(de-integration)。
+                    
      关于运行速度，目前可以做到在两块GPU（GTX Titan X + GTX Titan Black）上实时。
      在演示视频中，structure sensor是卡在iPad上，
      将采集到的数据通过无线网络传给台式机（带GPU），
